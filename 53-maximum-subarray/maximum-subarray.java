@@ -6,7 +6,7 @@ class Solution {
             curr += nums[i];
             if (curr > max) {
                 max = curr;
-            }
+            } 
             if (curr < 0) {
                 curr = 0;
             }
