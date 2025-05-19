@@ -1,19 +1,20 @@
 class Solution {
     public int findGCD(int[] nums) {
-        Arrays.sort(nums);
-        int min = nums[0];
-        int max = nums[nums.length - 1];
-        int i = 2, gcd = 1;
-        while (min != 0 && i <= min) {
-            if (max % i == 0 && min % i == 0) {
-                gcd *= i;
-                max /= i;
-                min /= i;
-            } else {
-                i++;
-            }
+        int min = Math.min(nums[0], nums[1]);
+        int max = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < nums.length; i++) {
+            min = Math.min(min, nums[i]);
+            max = Math.max(max, nums[i]);
         }
-        return gcd;
+        int res = 0;
+        int i = 1;
+        while (i <= min) {
+            if (max % i == 0 && min % i == 0) {
+                res = i;
+            }
+            i++;
+        }
+        return res;
     }
 
     // different implementations of euclid's method
