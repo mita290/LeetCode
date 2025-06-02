@@ -10,16 +10,6 @@ class Solution {
         }
         return true;
     }
-    public boolean isPal(int x) {
-        int m = 0;
-        int n = x;
-        while (n != 0) {
-            m = (m * 10) + (n % 10);
-            n /= 10;
-        }
-        return x == m;
-
-    }
     public int primePalindrome(int n) {
         if (8 <= n && n <= 11) return 11;
         for (int i = 1; i < 100000; i++) {
