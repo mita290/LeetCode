@@ -7,14 +7,10 @@ class Solution {
             int x = Math.abs(arr[i] - arr[i + 1]);
             if (x < diff) {
                 diff = x;
-            }
-        }
-        for (int i = 0; i < arr.length - 1; i++) {
-            ArrayList<Integer> al = new ArrayList<>();
-            if (Math.abs(arr[i] - arr[i + 1]) == diff) {
-                al.add(arr[i]);
-                al.add(arr[i + 1]);
-                res.add(al);
+                res.clear();
+                res.add(Arrays.asList(arr[i], arr[i + 1]));
+            } else if (x == diff) {                
+                res.add(Arrays.asList(arr[i], arr[i + 1]));
             }
         }
         return res;
