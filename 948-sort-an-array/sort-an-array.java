@@ -19,19 +19,28 @@ class Solution {
             b[i] = arr[m + 1 + i];
         }
         int i = 0, j = 0, k = l;
-        while (i < p && j < q) {
-            if (a[i] <= b[j]) {
+        // while (i < p && j < q) {
+        //     if (a[i] <= b[j]) {
+        //         arr[k++] = a[i++];
+        //     } else {
+        //         arr[k++] = b[j++];
+        //     }
+        // }
+        // while (i < p) {
+        //     arr[k++] = a[i++];
+        // }
+        // while (j < q) {
+        //     arr[k++] = b[j++];
+        // }
+        
+        //lesser lines of code
+        while (i < p || j < q) {
+            if (j == q || i < p && a[i] < b[j]) {
                 arr[k++] = a[i++];
             } else {
                 arr[k++] = b[j++];
             }
-        }
-        while (i < p) {
-            arr[k++] = a[i++];
-        }
-        while (j < q) {
-            arr[k++] = b[j++];
-        }
+        } 
     }
     public int[] sortArray(int[] nums) {
         //Arrays.sort(nums);
