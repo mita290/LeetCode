@@ -20,7 +20,7 @@ class Solution {
             }
         } else if (list1 == null) {
             return list2;
-        }
+        } 
         return list1;
     }
 }
