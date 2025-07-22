@@ -14,7 +14,6 @@
  * }
  */
 class Solution {
-    static int ct = 0;
     public int maxDepth(TreeNode root) {
         return fun(root);
     }
