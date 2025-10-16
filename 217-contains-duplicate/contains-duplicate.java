@@ -20,7 +20,7 @@ class Solution {
         // return false;
 
         // comparing set lengths
-        Set<Integer> ts = new TreeSet<>();
+        Set<Integer> ts = new HashSet<>();
         for (int n : nums) {
             ts.add(n);
         }
