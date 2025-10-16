@@ -10,21 +10,21 @@ class Solution {
         // return false;
 
         // set approach
-        Set<Integer> ts = new TreeSet<>();
-        for (int n : nums) {
-            if (ts.contains(n)) {
-                return true;
-            }
-            ts.add(n);
-        }
-        return false;
-
-        // comparing set lengths
         // Set<Integer> ts = new TreeSet<>();
         // for (int n : nums) {
+        //     if (ts.contains(n)) {
+        //         return true;
+        //     }
         //     ts.add(n);
         // }
-        // return ts.size() != nums.length;
+        // return false;
+
+        // comparing set lengths
+        Set<Integer> ts = new TreeSet<>();
+        for (int n : nums) {
+            ts.add(n);
+        }
+        return ts.size() != nums.length;
 
     
     }
