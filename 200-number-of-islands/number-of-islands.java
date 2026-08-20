@@ -1,4 +1,5 @@
 class Solution {
+    /* BFS Approach - slower
     public void bfs(char[][] grid, int i, int j, int row, int col) {
         Queue<int[]> q = new LinkedList<>();
         
@@ -28,11 +29,9 @@ class Solution {
                 }
             }
         }
+    } */
 
-
-    }
-
-    /* DFS Approach
+    // DFS Approach
     public void dfs(char[][] grid, int i, int j, int row, int col) {
         if (i < 0 || j < 0 || i >= row || j >= col || grid[i][j] != '1') {
             return;
@@ -42,7 +41,7 @@ class Solution {
         dfs(grid, i, j - 1, row, col);
         dfs(grid, i + 1, j, row, col);
         dfs(grid, i, j + 1, row, col);
-    } */
+    }
 
 
     public int numIslands(char[][] grid) {
@@ -51,7 +50,7 @@ class Solution {
             for (int j = 0; j < grid[0].length; j++) {
                 if (grid[i][j] == '1') {
                     ct++;
-                    bfs(grid, i, j, grid.length, grid[0].length);
+                    dfs(grid, i, j, grid.length, grid[0].length);
                 }
             }
         }
