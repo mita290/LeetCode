@@ -9,6 +9,10 @@
  * }
  */
 class Solution {
+    // using merge sort
+    // time: O(nlog(n))
+    // space: O(log(n)) --> recursive stack space
+
     public ListNode combineSortedLists(ListNode n1, ListNode n2) {
         ListNode tempHead = new ListNode(-1, null);
         ListNode x = tempHead;
