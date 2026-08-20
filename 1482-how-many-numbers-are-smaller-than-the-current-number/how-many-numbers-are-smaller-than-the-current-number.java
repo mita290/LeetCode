@@ -1,6 +1,8 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
 
+        // using prefix sum
+
         int[] allNums = new int[101];
         int[] res = new int[nums.length];
 
@@ -21,9 +23,6 @@ class Solution {
         }
 
         return res;
-
-
-
 
         // HashMap<Integer, Integer> hm = new LinkedHashMap<>();
         // ArrayList<Integer> al = new ArrayList<>();
