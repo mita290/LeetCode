@@ -1,5 +1,7 @@
 class Solution {
     public int[] sortedSquares(int[] nums) {
+        // two pointer approach - optimal
+
         int n = nums.length;
         int[] res = new int[n];
         int i = 0, j = n - 1, idx = n - 1;
