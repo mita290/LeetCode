@@ -1,6 +1,8 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
         // frequency counting
+        // Time: O(n)
+        // Space: O(1)
         int[] freq = new int[26];
         for (char c : s.toCharArray()) {
             freq[c - 'a']++;
