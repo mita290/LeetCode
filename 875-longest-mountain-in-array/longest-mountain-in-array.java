@@ -1,9 +1,5 @@
 class Solution {
     public int longestMountain(int[] arr) {
-
-        
-
-
         // in the optimal approach, we identify the peak first and extend the left and right edges
         // we repeat this process for all elements in the array
         
