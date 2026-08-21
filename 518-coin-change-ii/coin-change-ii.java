@@ -1,24 +1,14 @@
 class Solution {
     public int change(int amount, int[] coins) {
-        Map<String, Integer> memo = new HashMap<>();
-        return count(0, amount, coins, memo);
-    }
-    public int count(int i, int x, int[] coins, Map<String, Integer> memo) {
-        String key = i + "," + x;
-        if (memo.containsKey(key)) {
-            return memo.get(key);
-        }
+        
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
 
-        if (i == coins.length) {
-            return (x == 0) ? 1 : 0;
+        for (int c : coins) {
+            for (int i = c; i <= amount; i++) {
+                dp[i] += dp[i - c];
+            }
         }
-        int take = 0;
-        if (x >= coins[i]) {
-            take = count(i, x - coins[i], coins, memo);
-        }
-        int skip = count(i + 1, x, coins, memo);
-        int total = take + skip;
-        memo.put(key, total);
-        return total;
+        return dp[amount];
     }
 }
