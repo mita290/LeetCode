@@ -1,17 +1,14 @@
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
+        
         LinkedHashMap<Integer, ArrayList<Integer>> hm = new LinkedHashMap<>();
         for (int i = 0; i < nums.length; i++) {
+            
             if (hm.containsKey(nums[i])) {
 
                 hm.get(nums[i]).add(i);
-
                 for (int j = 0; j < hm.get(nums[i]).size(); j++) {
-
                     if (hm.get(nums[i]).get(j) != i && Math.abs(hm.get(nums[i]).get(j) - i) <= k) {
-                        System.out.println("nums[i]: " + i);
-                        System.out.println("arraylist" + hm.get(nums[i]).get(j));
-                        System.out.println("difference: " + Math.abs(hm.get(nums[i]).get(j) - i));
                         return true;
                     }
                 }
