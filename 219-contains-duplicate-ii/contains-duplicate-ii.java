@@ -1,10 +1,23 @@
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        for (int i = 0; i < nums.length; i++) { 
-            for (int j = i + 1; j < nums.length && j <= i + k; j++) {
-                if (nums[i] == nums[j]) {
-                    return true;
+        LinkedHashMap<Integer, ArrayList<Integer>> hm = new LinkedHashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (hm.containsKey(nums[i])) {
+
+                hm.get(nums[i]).add(i);
+
+                for (int j = 0; j < hm.get(nums[i]).size(); j++) {
+
+                    if (hm.get(nums[i]).get(j) != i && Math.abs(hm.get(nums[i]).get(j) - i) <= k) {
+                        System.out.println("nums[i]: " + i);
+                        System.out.println("arraylist" + hm.get(nums[i]).get(j));
+                        System.out.println("difference: " + Math.abs(hm.get(nums[i]).get(j) - i));
+                        return true;
+                    }
                 }
+                
+            } else {
+                hm.put(nums[i], new ArrayList<Integer>(Arrays.asList(i)));
             }
         }
         return false;
