@@ -3,6 +3,8 @@ class Solution {
         int n = nums.length;
         List<List<Integer>> lists = new ArrayList<>();
 
+        // using two pointer method
+
         Arrays.sort(nums);
 
         for (int i = 0; i < n - 2; i++) {
